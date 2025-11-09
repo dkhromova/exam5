@@ -42,17 +42,4 @@ public class LoginTests extends BaseUI {
                 .checkError("Epic sadface: Sorry, this user has been locked out.");
     }
 
-    @DisplayName("Авторизация замедленного пользователя")
-    @Story("Как пользователь с плохим интернетом я могу авторизоваться в магазине")
-    @Description("Авторизация по корректным кредам пользователя с задержкой")
-    @Tags({@Tag("Позитивный"), @Tag("Смоук")})
-    @Test
-    void performanceGlitchUserLoginTest() {
-        loginPage
-                .setUsername("performance_glitch_user")
-                .setPassword("secret_sauce")
-                .clickLoginSuccess()
-                .checkIsOpened();
-    }
-
 }

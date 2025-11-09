@@ -91,10 +91,7 @@
                 <artifactId>allure-maven</artifactId>
                 <version>2.11.2</version>
                 <configuration>
-
-                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
-
-                    <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
+                    <resultsDirectory>${project.basedir}/allure-results</resultsDirectory>
                 </configuration>
                 <executions>
                     <execution>
@@ -107,6 +104,7 @@
                 </executions>
             </plugin>
 
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
@@ -115,11 +113,6 @@
                     <argLine>
                         -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
-                    <includes>
-                        <include>
-                            other.FirstTest.java
-                        </include>
-                    </includes>
                 </configuration>
             </plugin>    </plugins>  </build>
 </project>
