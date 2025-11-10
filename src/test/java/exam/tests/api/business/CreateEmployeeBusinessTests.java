@@ -3,17 +3,10 @@ package exam.tests.api.business;
 import exam.base.BaseTestAPI;
 import exam.entities.EmployeeRequest;
 import exam.entities.EmployeeResponse;
-import exam.helpers.EmployeeHelper;
-import exam.helpers.EmployeeHelperDB;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import org.junit.jupiter.api.*;
-
-import java.io.IOException;
-import java.sql.SQLException;
-
-import static io.restassured.RestAssured.baseURI;
 import static org.junit.jupiter.api.Assertions.*;
 
 @Epic("API Business Tests")

@@ -1,27 +1,3 @@
-//package exam.base;
-//
-//import exam.helpers.AuthHelper;
-//import org.junit.jupiter.api.BeforeAll;
-//import org.junit.jupiter.api.BeforeEach;
-//
-//import static io.restassured.RestAssured.baseURI;
-//
-//public class BaseTestAPI {
-//
-//    public static AuthHelper authHelper;
-//    public static String token;
-//
-//    @BeforeAll
-//    public static void setUri() {
-//        baseURI = "https://innopolispython.onrender.com";
-//    }
-//
-//    @BeforeEach
-//    public void setUp() {
-//        authHelper = new AuthHelper();
-//        token = authHelper.getToken("admin", "admin");
-//    }
-//}
 
 package exam.base;
 

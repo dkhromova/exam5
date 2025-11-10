@@ -4,12 +4,9 @@ package exam.tests.api.contract;
 import exam.base.BaseTestAPI;
 import exam.entities.EmployeeRequest;
 import exam.entities.EmployeeResponse;
-import exam.helpers.EmployeeHelper;
 import io.qameta.allure.*;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
-
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.junit.Assert.assertEquals;

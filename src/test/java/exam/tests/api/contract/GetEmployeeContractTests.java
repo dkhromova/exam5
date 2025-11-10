@@ -3,7 +3,6 @@ package exam.tests.api.contract;
 
 import exam.base.BaseTestAPI;
 import exam.entities.EmployeeRequest;
-import exam.helpers.EmployeeHelper;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
@@ -13,7 +12,6 @@ import org.junit.jupiter.api.*;
 
 import java.util.List;
 
-import static io.restassured.RestAssured.baseURI;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.everyItem;
 import static org.hamcrest.CoreMatchers.notNullValue;

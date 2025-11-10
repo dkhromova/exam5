@@ -1,6 +1,5 @@
 package exam.entities;
 
-import io.qameta.allure.Step;
 
 public class EmployeeRequest {
     private String city;
