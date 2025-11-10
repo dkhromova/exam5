@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+.idea/
+out/
 
 ### Eclipse ###
 .apt_generated
@@ -36,4 +38,11 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
 target/allure-results
+
+target/
+*.log
+.allure/
+.DS_Store
+Thumbs.db
