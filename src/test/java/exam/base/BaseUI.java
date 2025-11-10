@@ -1,6 +1,9 @@
 package exam.base;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 
 import static com.codeborne.selenide.Selenide.*;
@@ -11,6 +14,11 @@ public class BaseUI {
 
     @BeforeEach
     public void setUp() {
+
+        SelenideLogger.addListener("AllureSelenide",
+                new AllureSelenide().screenshots(true).savePageSource(true));
+
+
         Configuration.browser = "chrome";
         Configuration.headless = false;
         Configuration.timeout = 10000;
@@ -31,6 +39,11 @@ public class BaseUI {
         }
         open(baseUrl);
 
+    }
+
+    @AfterEach
+    public void tearDown() {
+        closeWebDriver();
     }
 
 

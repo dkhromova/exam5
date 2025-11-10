@@ -15,31 +15,31 @@ import org.junit.jupiter.api.Test;
 @Feature("Авторизация")
 public class LoginTests extends BaseUI {
     LoginPage loginPage = new LoginPage();
-//
-//    @DisplayName("Успешная авторизация")
-//    @Story("Как пользователь я могу авторизоваться в магазине")
-//    @Description("Авторизация по корректным кредам не заблокированного пользователя")
-//    @Tags({@Tag("Позитивный"), @Tag("Смоук")})
-//    @Test
-//    void successfulLoginTest() {
-//        loginPage
-//                .setUsername("standard_user")
-//                .setPassword("secret_sauce")
-//                .clickLoginSuccess()
-//                .checkIsOpened();
-//    }
 
-//    @DisplayName("Авторизация замедленного пользователя")
-//    @Story("Как пользователь с плохим интернетом я могу авторизоваться в магазине")
-//    @Description("Авторизация по корректным кредам пользователя с задержкой")
-//    @Tags({@Tag("Позитивный"), @Tag("Смоук")})
-//    @Test
-//    void performanceGlitchUserLoginTest() {
-//        loginPage
-//                .setUsername("performance_glitch_user")
-//                .setPassword("secret_sauce")
-//                .clickLoginSuccess()
-//                .checkIsOpened();
-//    }
+    @DisplayName("Успешная авторизация")
+    @Story("Как пользователь я могу авторизоваться в магазине")
+    @Description("Авторизация по корректным кредам не заблокированного пользователя")
+    @Tags({@Tag("Позитивный"), @Tag("Смоук")})
+    @Test
+    void successfulLoginTest() {
+        loginPage
+                .setUsername("standard_user")
+                .setPassword("secret_sauce")
+                .clickLoginSuccess()
+                .checkIsOpened();
+    }
+
+    @DisplayName("Авторизация замедленного пользователя")
+    @Story("Как пользователь с плохим интернетом я могу авторизоваться в магазине")
+    @Description("Авторизация по корректным кредам пользователя с задержкой")
+    @Tags({@Tag("Позитивный"), @Tag("Смоук")})
+    @Test
+    void performanceGlitchUserLoginTest() {
+        loginPage
+                .setUsername("performance_glitch_user")
+                .setPassword("secret_sauce")
+                .clickLoginSuccess()
+                .checkIsOpened();
+    }
 
 }
