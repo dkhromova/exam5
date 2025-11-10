@@ -2,16 +2,16 @@ name: Run API & UI Tests
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
-    branches:
-      - main
-    workflow_dispatch:
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      CI: true
 
     steps:
       - name: Checkout code
@@ -31,18 +31,30 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: Install Chrome & ChromeDriver
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wget unzip xvfb
+          sudo apt-get install -y google-chrome-stable || sudo apt-get install -y chromium-browser
+          
+          CHROME_VERSION=$(google-chrome --version | grep -oE "[0-9]+(\.[0-9]+)+")
+          echo "Chrome version: $CHROME_VERSION"
+          wget -q "https://storage.googleapis.com/chrome-for-testing-public/${CHROME_VERSION}/linux64/chromedriver-linux64.zip" -O /tmp/chromedriver.zip || true
+          unzip -o /tmp/chromedriver.zip -d /tmp/ || true
+          sudo mv /tmp/chromedriver-linux64/chromedriver /usr/local/bin/
+          sudo chmod +x /usr/local/bin/chromedriver
+          
+          google-chrome --version
+          chromedriver --version
+
       - name: Install dependencies
         run: mvn clean install -DskipTests
 
       - name: Run tests
-        run: mvn test
+        run: xvfb-run mvn test
 
       - name: Generate Allure report
         run: mvn allure:report
 
       - name: Upload Allure results
         uses: actions/upload-artifact@v4
-        with:
-          name: allure-results
-          path: target/allure-results
-

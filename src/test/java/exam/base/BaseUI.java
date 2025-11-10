@@ -17,6 +17,18 @@ public class BaseUI {
         Configuration.browserSize = "1280x1024";
         Configuration.browserPosition = "100x0";
 
+        // Для запуска тестов в GitHub Actions
+        if (System.getenv("CI") != null) {
+            Configuration.headless = true;
+            Configuration.browserCapabilities.setCapability("goog:chromeOptions",
+                    new org.openqa.selenium.chrome.ChromeOptions()
+                            .addArguments("--no-sandbox")
+                            .addArguments("--disable-dev-shm-usage")
+                            .addArguments("--disable-gpu")
+                            .addArguments("--window-size=1920,1080")
+                            .addArguments("--headless=new")
+            );
+        }
         open(baseUrl);
 
     }
