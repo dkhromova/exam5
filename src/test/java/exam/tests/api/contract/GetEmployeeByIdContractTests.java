@@ -9,7 +9,7 @@ import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.equalTo;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Epic("API Contract Tests")
 @Feature("Получение сотрудника по ID")

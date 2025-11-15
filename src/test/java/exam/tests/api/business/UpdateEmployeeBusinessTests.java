@@ -9,7 +9,7 @@ import io.qameta.allure.Feature;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.*;
 import static io.restassured.RestAssured.given;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Epic("API Business Tests")
 @Feature("Обновление сотрудника")
@@ -38,9 +38,10 @@ public class UpdateEmployeeBusinessTests extends BaseTestAPI {
 
         EmployeeResponse employeeFromDB = employeeHelperDB.getEmployee(createdEmployeeId);
 
-        assertEquals("Город должен быть обновлён",updatedEmployee.getCity(), employeeFromDB.getCity());
-        assertEquals( "Имя должно совпадать", updatedEmployee.getName(), employeeFromDB.getName());
-        assertEquals("Фамилия должна совпадать", updatedEmployee.getSurname(), employeeFromDB.getSurname());
-        assertEquals( "Должность должна совпадать", updatedEmployee.getPosition(), employeeFromDB.getPosition());
+        assertEquals(updatedEmployee.getCity(), employeeFromDB.getCity(), "Город должен быть обновлён");
+        assertEquals(updatedEmployee.getName(), employeeFromDB.getName(), "Имя должно совпадать");
+        assertEquals(updatedEmployee.getSurname(), employeeFromDB.getSurname(), "Фамилия должна совпадать");
+        assertEquals(updatedEmployee.getPosition(), employeeFromDB.getPosition(), "Должность должна совпадать");
+
     }
 }

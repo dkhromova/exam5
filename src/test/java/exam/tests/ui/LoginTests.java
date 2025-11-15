@@ -21,7 +21,7 @@ public class LoginTests extends BaseUI {
     @Description("Авторизация по корректным кредам не заблокированного пользователя")
     @Tags({@Tag("Позитивный"), @Tag("Смоук")})
     @Test
-    void successfulLoginTest() {
+    public void successfulLoginTest() {
         loginPage
                 .setUsername("standard_user")
                 .setPassword("secret_sauce")
@@ -34,7 +34,7 @@ public class LoginTests extends BaseUI {
     @Description("Авторизация по корректным кредам пользователя с задержкой")
     @Tags({@Tag("Позитивный"), @Tag("Смоук")})
     @Test
-    void performanceGlitchUserLoginTest() {
+    public void performanceGlitchUserLoginTest() {
         loginPage
                 .setUsername("performance_glitch_user")
                 .setPassword("secret_sauce")
