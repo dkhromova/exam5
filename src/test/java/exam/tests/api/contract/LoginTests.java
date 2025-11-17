@@ -17,6 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 @Epic("API Contract Tests")
 @Feature("Авторизация")
+@DisplayName("Авторизация сотрудника - Контрактные тесты")
 public class LoginTests {
 
     private final User user = new User("admin", "admin");

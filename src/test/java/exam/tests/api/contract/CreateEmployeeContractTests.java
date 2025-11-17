@@ -16,6 +16,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
 
 @Epic("API Contract Tests")
 @Feature("Создание сотрудника")
+@DisplayName("Создание сотрудника - Контрактные тесты")
 public class CreateEmployeeContractTests extends BaseTestAPI {
 
 

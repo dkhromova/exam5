@@ -19,6 +19,7 @@ import static org.hamcrest.Matchers.isA;
 
 @Epic("API Contract Tests")
 @Feature("Получение информации по сотруднику")
+@DisplayName("Получение сотрудника - Контрактные тесты")
 public class GetEmployeeContractTests extends BaseTestAPI {
 
     @BeforeEach

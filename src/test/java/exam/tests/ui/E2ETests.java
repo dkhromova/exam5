@@ -12,6 +12,7 @@ import org.junit.jupiter.api.*;
 
 @Epic("UI Tests")
 @Feature("Оформление заказа")
+@DisplayName("E2E тесты")
 public class E2ETests extends BaseUI {
 
     private LoginPage loginPage;

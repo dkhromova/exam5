@@ -11,6 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @Epic("API Business Tests")
 @Feature("Создание сотрудника")
+@DisplayName("Создание сотрудника - Бизнес тесты")
 public class CreateEmployeeBusinessTests extends BaseTestAPI {
 
 

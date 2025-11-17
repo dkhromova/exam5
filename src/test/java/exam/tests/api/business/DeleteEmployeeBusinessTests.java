@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Epic("API Business Tests")
 @Feature("Удаление сотрудника")
+@DisplayName("Удаление сотрудника - Бизнес тесты")
 public class DeleteEmployeeBusinessTests extends BaseTestAPI {
 
 
