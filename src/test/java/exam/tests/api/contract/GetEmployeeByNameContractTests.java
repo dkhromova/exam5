@@ -19,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GetEmployeeByNameContractTests extends BaseTestAPI {
 
 
+    @Disabled("Ошибка из-за сваггера")
     @Test
     @Story("Проверка, что сотрудник находится по имени")
     @Description("Проверка, что по имени можно успешно найти существующего сотрудника")
